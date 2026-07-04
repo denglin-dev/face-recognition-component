@@ -1,0 +1,28 @@
+{
+  "name": "face-recognition-component",
+  "version": "1.0.0",
+  "description": "A ready-to-use Vue 3 face liveness recognition component powered by face-api.js.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vue-tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "models": "node scripts/download-models.mjs",
+    "postinstall": "node scripts/download-models.mjs"
+  },
+  "dependencies": {
+    "face-api.js": "^0.22.2",
+    "vue": "^3.5.39"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-basic-ssl": "^2.3.0",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.3",
+    "vue-tsc": "^3.3.6"
+  }
+}

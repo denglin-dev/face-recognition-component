@@ -1,0 +1,107 @@
+/* 全局盒模型统一，避免卡片和按钮尺寸受边框影响。 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面背景只服务演示页，用于突出中间的人脸识别卡片。 */
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: #101828;
+  background:
+    radial-gradient(circle at top left, rgba(79, 70, 229, 0.12), transparent 32rem),
+    #f8fafc;
+}
+
+/* 演示页按钮基础样式，具体的次要按钮在下方单独覆盖颜色。 */
+button {
+  min-width: 112px;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 18px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #2563eb;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* 演示容器居中展示组件，方便直接运行项目查看效果。 */
+.demo-page {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+/* 中间卡片承载标题、组件、控制按钮和检测结果。 */
+.demo-card {
+  width: min(100%, 520px);
+  border: 1px solid #e4e7ec;
+  border-radius: 28px;
+  padding: 32px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 24px 60px rgba(16, 24, 40, 0.12);
+}
+
+.demo-eyebrow {
+  margin: 0 0 8px;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.demo-card h1 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 40px);
+}
+
+.demo-description {
+  margin: 14px auto 28px;
+  color: #667085;
+  line-height: 1.7;
+}
+
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* 次要按钮用于停止摄像头，视觉上弱于重新检测按钮。 */
+.demo-button-secondary {
+  color: #344054;
+  background: #eef2f7;
+}
+
+.demo-button-secondary:hover {
+  background: #e4e7ec;
+}
+
+.demo-result {
+  min-height: 24px;
+  margin: 20px 0 0;
+  color: #344054;
+  font-weight: 700;
+}
+
+@media (max-width: 420px) {
+  .demo-page {
+    padding: 24px 12px;
+  }
+
+  .demo-card {
+    padding: 28px 20px;
+  }
+}
